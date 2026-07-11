@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@300;400;500;600&display=swap');
+
+:host {
+  display: block;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 0 80px;
+  background: #f8f5f2;
+  overflow: hidden;
+}
+
+.container {
+  width: min(1200px, 90%);
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 80px;
+}
+
+/* ---------------- LEFT ---------------- */
+
+.hero-content {
+  z-index: 2;
+}
+
+.hero-tag {
+  display: inline-block;
+  margin-bottom: 20px;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  color: #8d5b65;
+}
+
+h1 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(4rem, 8vw, 5.5rem);
+  line-height: 1.05;
+  font-weight: 600;
+  color: #2f2a2b;
+}
+
+.name {
+  display: block;
+  color: #65101a;
+}
+
+.typing {
+  margin-top: 20px;
+
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 500;
+
+  color: #000;
+}
+
+.hero-content p {
+  margin: 35px 0;
+
+  max-width: 520px;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  line-height: 1.9;
+  font-weight: 300;
+
+  color: #6d6667;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+.btn {
+  padding: 16px 34px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .5px;
+
+  transition: all .35s ease;
+}
+
+.primary {
+  background: #65101a;
+  color: white;
+}
+
+.primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(101, 16, 26, .2);
+}
+
+.secondary {
+  border: 1px solid #65101a;
+  color: #65101a;
+}
+
+.secondary:hover {
+  background: #65101a;
+  color: white;
+}
+
+/* ---------------- RIGHT ---------------- */
+
+.hero-image {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+}
+
+.image-card {
+
+  width: 430px;
+  height: 560px;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  transition: .5s;
+
+  background: white;
+
+  box-shadow:
+      0 25px 60px rgba(0,0,0,.08);
+}
+
+.image-card img {
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: .6s;
+}
+
+.image-card:hover {
+
+  transform: translateY(-10px);
+
+}
+
+.image-card:hover img {
+
+  transform: scale(1.08);
+
+}
+
+.experience-card {
+
+  position: absolute;
+
+  bottom: 20px;
+  left: -30px;
+
+  background: rgba(255,255,255,.85);
+
+  backdrop-filter: blur(15px);
+
+  border-radius: 18px;
+
+  padding: 22px 28px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+
+}
+
+.experience-card h3 {
+
+  margin: 0;
+
+  font-family: "Playfair Display";
+
+  color: #65101a;
+
+  font-size: 2rem;
+
+}
+
+.experience-card span {
+
+  display: block;
+
+  margin-top: 6px;
+
+  font-family: "Manrope";
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color: #6d6667;
+
+}
+
+/* ---------------- BACKGROUND ---------------- */
+
+.bg-circle {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  opacity: .25;
+
+}
+
+.circle-1 {
+
+  width: 420px;
+  height: 420px;
+
+  top: -120px;
+  right: -120px;
+
+  background: #d8aeb7;
+
+}
+
+.circle-2 {
+
+  width: 350px;
+  height: 350px;
+
+  bottom: -100px;
+  left: -120px;
+
+  background: #65101a;
+
+  opacity: .12;
+
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width:992px){
+
+.container{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero-content p{
+
+margin-inline:auto;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.hero-image{
+
+margin-top:50px;
+
+}
+
+.experience-card{
+
+left:50%;
+
+transform:translateX(-50%);
+
+bottom:-20px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.hero{
+
+padding-top:100px;
+
+}
+
+h1{
+
+font-size:3.2rem;
+
+}
+
+.typing{
+
+font-size:1.6rem;
+
+}
+
+.image-card{
+
+width:100%;
+
+height:460px;
+
+}
+
+.btn{
+
+width:100%;
+
+text-align:center;
+
+}
+
+}
