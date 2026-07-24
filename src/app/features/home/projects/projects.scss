@@ -1,0 +1,432 @@
+:host {
+  display: block;
+}
+
+.projects {
+  padding: 120px 0;
+  background: #F8F5F2;
+}
+
+.container {
+  width: min(1200px, 90%);
+  margin: auto;
+}
+
+/*==========================
+        HEADER
+==========================*/
+
+.section-header {
+  margin-bottom: 80px;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #65101A;
+
+  margin-bottom: 18px;
+}
+
+.section-tag::before {
+  content: "";
+
+  width: 45px;
+  height: 2px;
+
+  background: #65101A;
+}
+
+.section-header h2 {
+  margin-top: 15px;
+
+  font-family: "Playfair Display", serif;
+  font-size: 4rem;
+  font-weight: 600;
+
+  color: #2B2B2B;
+}
+
+/*==========================
+      PROJECT CARD
+==========================*/
+
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 60px;
+
+  margin-bottom: 120px;
+}
+
+/* ثاني مشروع */
+
+.project-card.reverse {
+  direction: rtl;
+}
+
+.project-card.reverse .project-content {
+  direction: ltr;
+}
+
+/*==========================
+        IMAGE
+==========================*/
+
+.project-image {
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  cursor: pointer;
+
+  box-shadow:
+      0 25px 60px rgba(0,0,0,.08);
+}
+
+.project-image img {
+  width: 100%;
+
+  display: block;
+
+  transition: .6s;
+
+  object-fit: cover;
+}
+
+/*==========================
+        BADGE
+==========================*/
+
+.badge {
+
+  position: absolute;
+
+  left: 25px;
+
+  top: 25px;
+
+  background: #65101A;
+
+  color: white;
+
+  padding: 10px 22px;
+
+  border-radius: 50px;
+
+  font-size: 13px;
+
+  letter-spacing: 1px;
+
+  z-index: 5;
+}
+
+/*==========================
+      CONTENT
+==========================*/
+
+.project-category {
+
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: #8C5A62;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  font-size: 14px;
+}
+
+.project-content h3 {
+
+  font-size: 3rem;
+
+  font-family: "Playfair Display", serif;
+
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  color: #2B2B2B;
+
+  margin-bottom: 25px;
+}
+
+.project-content p {
+
+  color: #777;
+
+  line-height: 2;
+
+  font-size: 18px;
+
+  margin-bottom: 35px;
+
+  font-weight: 300;
+}
+
+/*==========================
+      TECH STACK
+==========================*/
+
+.tech-stack {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.tech-stack span {
+
+  padding: 10px 18px;
+
+  background: #F2EBE8;
+
+  border-radius: 40px;
+
+  color: #65101A;
+
+  font-size: 14px;
+
+  transition: .35s;
+}
+
+.project-card:hover .tech-stack span {
+
+  background: #65101A;
+
+  color: white;
+}
+/*==================================
+            IMAGE HOVER
+===================================*/
+
+.overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+   background: rgba(0,0,0,.45);
+backdrop-filter: blur(3px);
+
+    display: flex;
+
+  gap:15px;
+
+flex-direction:row;
+
+    justify-content: center;
+
+    align-items: center;
+
+
+    opacity: 0;
+
+    transition: .45s ease;
+
+}
+
+.project-image:hover .overlay{
+
+    opacity: 1;
+
+}
+
+/* Zoom Image */
+
+.project-image:hover img{
+
+   transform: scale(1.08) rotate(.8deg);
+
+}
+
+/*==================================
+          BUTTONS
+===================================*/
+
+.overlay-btn{
+
+    text-decoration: none;
+
+    padding: 15px 34px;
+
+    border-radius: 50px;
+
+    background: #65101A;
+
+    color: white;
+
+    font-size: 15px;
+
+    letter-spacing: 1px;
+
+    transition: .35s;
+
+    transform: translateY(35px);
+
+    opacity: 0;
+
+}
+
+.overlay-btn.secondary{
+
+    background: transparent;
+
+    border: 1px solid white;
+
+}
+
+.project-image:hover .overlay-btn{
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+.project-image:hover .overlay-btn:nth-child(2){
+
+    transition-delay: .08s;
+
+}
+
+.overlay-btn:hover{
+
+    background: white;
+
+    color: #65101A;
+
+}
+
+.overlay-btn.secondary:hover{
+
+    background: #65101A;
+
+    color: white;
+
+    border-color: #65101A;
+
+}
+
+/*==================================
+         CARD ANIMATION
+===================================*/
+
+.project-card{
+
+    transition: .45s;
+
+}
+
+.project-card:hover{
+
+    transform: translateY(-10px);
+
+}
+
+/*==================================
+        RESPONSIVE
+===================================*/
+
+@media(max-width:992px){
+
+.project-card,
+.project-card.reverse{
+
+grid-template-columns:1fr;
+
+direction:ltr;
+
+gap:45px;
+
+margin-bottom:90px;
+
+}
+
+.project-content{
+
+text-align:center;
+
+}
+
+.tech-stack{
+
+justify-content:center;
+
+}
+
+.section-header{
+
+text-align:center;
+
+}
+
+.section-tag{
+
+justify-content:center;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.projects{
+
+padding:90px 0;
+
+}
+
+.section-header h2{
+
+font-size:3rem;
+
+}
+
+.project-content h3{
+
+font-size:2.3rem;
+
+}
+
+.project-content p{
+
+font-size:16px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.section-header h2{
+
+font-size:2.4rem;
+
+}
+
+.overlay-btn{
+
+width:180px;
+
+text-align:center;
+
+}
+
+}

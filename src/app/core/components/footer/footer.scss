@@ -1,0 +1,175 @@
+.footer {
+
+    position: relative;
+
+    background: #2E2929;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+    padding: 45px 0;
+
+}
+
+.container{
+
+    width:min(1200px,90%);
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:30px;
+
+}
+
+.logo{
+
+    text-decoration:none;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:2.3rem;
+
+    font-weight:700;
+
+    color:#fff;
+
+    transition:.35s;
+
+}
+
+.logo:hover{
+
+    color:#C38A95;
+
+}
+
+.copyright{
+
+    color:#A89C9C;
+
+    font-size:.95rem;
+
+    font-weight:300;
+
+    text-align:center;
+
+}
+
+.socials{
+
+    display:flex;
+
+    gap:22px;
+
+}
+
+.socials a{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#B7A9A9;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+}
+
+.socials a:hover{
+
+    background:#65101A;
+
+    color:#fff;
+
+    transform:translateY(-4px);
+
+}
+
+.socials i{
+
+    font-size:20px;
+
+}
+
+.scroll-top{
+
+    position:fixed;
+
+    bottom:35px;
+
+    right:35px;
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:#65101A;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    box-shadow:0 15px 35px rgba(101,16,26,.35);
+
+    transition:.35s;
+
+    z-index:999;
+
+}
+
+.scroll-top:hover{
+
+    transform:translateY(-8px) scale(1.08);
+
+    background:#7B1623;
+
+}
+
+.scroll-top mat-icon{
+
+    font-size:30px;
+
+    width:30px;
+
+    height:30px;
+
+}
+
+@media(max-width:900px){
+
+.container{
+
+flex-direction:column;
+
+}
+
+.copyright{
+
+order:3;
+
+}
+
+}
