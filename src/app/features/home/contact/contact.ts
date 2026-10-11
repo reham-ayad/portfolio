@@ -5,6 +5,6 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'app-contact',
   imports: [MatIconModule],
   templateUrl: './contact.html',
-  styleUrl: './Contact.scss',
+  styleUrl: './contact.scss',
 })
 export class Contact {}
