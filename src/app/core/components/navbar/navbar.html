@@ -1,5 +1,4 @@
 <header class="header">
-
   <div class="container">
 
     <!-- Logo -->
@@ -8,32 +7,46 @@
     </a>
 
     <!-- Navigation -->
+    <nav class="nav-links" [class.active]="menuOpen">
 
-    <nav class="nav-links">
+      <a href="#about" (click)="closeMenu()">About</a>
+      <a href="#skills" (click)="closeMenu()">Skills</a>
+      <a href="#projects" (click)="closeMenu()">Projects</a>
+      <a href="#experience" (click)="closeMenu()">Experience</a>
+      <a href="#contact" (click)="closeMenu()">Contact</a>
 
-      <a href="#about">About</a>
-
-      <a href="#skills">Skills</a>
-
-      <a href="#projects">Projects</a>
-
-      <a href="#experience">Experience</a>
-
-      <a href="#contact">Contact</a>
+      <!-- Mobile Resume Button -->
+      <a
+        href="Angular & Nodejs Developer.pdf"
+        download
+        class="resume-btn mobile-resume"
+        (click)="closeMenu()">
+        Download Resume
+      </a>
 
     </nav>
 
-    <!-- Resume Button -->
-
+    <!-- Desktop Resume Button -->
     <a
       href="Angular & Nodejs Developer.pdf"
       download
-      class="resume-btn">
-
+      class="resume-btn desktop-resume">
       Resume
-
     </a>
 
-  </div>
+    <!-- Hamburger Button -->
+    <button
+      class="menu-toggle"
+      [class.active]="menuOpen"
+      (click)="menuOpen = !menuOpen"
+      [attr.aria-expanded]="menuOpen"
+      aria-label="Toggle navigation">
 
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
 </header>

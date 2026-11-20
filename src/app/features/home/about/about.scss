@@ -238,74 +238,131 @@
 
 /* ---------------- Responsive ---------------- */
 
-@media(max-width:992px){
 
-.container{
+/* ---------------- RESPONSIVE ---------------- */
 
-grid-template-columns:1fr;
+@media (max-width: 992px) {
 
-gap:70px;
+  .about {
+    padding: 65px 0;
+  }
 
+  .container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .about-image {
+    width: 85%;
+    max-width: 550px;
+    margin: auto;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .section-tag {
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .about-content h2 {
+    margin-bottom: 20px;
+  }
+
+  .about-content p {
+    margin-bottom: 18px;
+  }
+
+  .about-info {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .about-badge {
+    right: 10px;
+    top: auto;
+    bottom: -20px;
+    transform: none;
+  }
+
+  .about-image:hover .about-badge {
+    transform: rotate(-4deg);
+  }
 }
 
-.about-content{
+/* ---------------- MOBILE ---------------- */
 
-text-align:center;
+@media (max-width: 576px) {
 
-}
+  .about {
+    padding: 45px 0;
+  }
 
-.section-tag{
+  .container {
+    width: 90%;
+    gap: 35px;
+  }
 
-justify-content:center;
+  .about-image {
+    width: 90%;
+  }
 
-}
+  .about-image img {
+    border-radius: 20px;
+  }
 
-.about-info{
+  .about-badge {
+    width: 90px;
+    height: 90px;
+    right: -15px;
+    bottom: -15px;
+    border-radius: 16px;
+  }
 
-justify-content:center;
+  .about-badge h3 {
+    font-size: 1.7rem;
+  }
 
-}
+  .about-badge span {
+    font-size: 10px;
+    margin-top: 4px;
+  }
 
-.about-badge{
+  .section-tag {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
 
-right:20px;
+  .section-tag::before {
+    width: 25px;
+  }
 
-top:auto;
+  .about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 18px;
+  }
 
-bottom:-30px;
+  .about-content p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
 
-transform:none;
+  .about-info {
+    gap: 15px;
+    margin-top: 20px;
+  }
 
-}
+  .info-item {
+    font-size: 13px;
+  }
 
-}
-
-@media(max-width:576px){
-
-.about{
-
-padding:90px 0;
-
-}
-
-.about-content h2{
-
-font-size:2.8rem;
-
-}
-
-.about-content p{
-
-font-size:16px;
-
-}
-
-.about-badge{
-
-width:110px;
-
-height:110px;
-
-}
-
+  .status {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+  }
 }

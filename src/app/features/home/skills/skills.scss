@@ -373,10 +373,10 @@
 
   color: #6a6262;
 
-  transition:
-    background 0.35s ease,
-    color 0.35s ease,
-    transform 0.35s ease;
+ transition:
+  background 0.35s ease,
+  color 0.35s ease,
+  transform 0.35s ease;
 }
 
 .skill-card:hover .tags span {
@@ -523,4 +523,262 @@
   i {
     font-size: 40px;
   }
+}
+
+
+/* =================================
+   SKILLS SECTION ANIMATIONS
+================================= */
+
+/* Section Background */
+.skills {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Header Animation */
+.skills-header {
+  animation: skillsHeaderReveal .9s ease both;
+}
+
+/* Grid Cards */
+.skill-card {
+  opacity: 0;
+  animation: skillReveal .8s cubic-bezier(.2,.8,.2,1) forwards;
+
+  transform-origin: center bottom;
+
+  will-change: transform, opacity;
+
+  cursor: default;
+}
+
+/* Stagger Animation */
+.skill-card:nth-child(1) {
+  animation-delay: .1s;
+}
+
+.skill-card:nth-child(2) {
+  animation-delay: .2s;
+}
+
+.skill-card:nth-child(3) {
+  animation-delay: .3s;
+}
+
+.skill-card:nth-child(4) {
+  animation-delay: .4s;
+}
+
+.skill-card:nth-child(5) {
+  animation-delay: .5s;
+}
+
+.skill-card:nth-child(6) {
+  animation-delay: .6s;
+}
+
+.skill-card:nth-child(7) {
+  animation-delay: .7s;
+}
+
+.skill-card:nth-child(8) {
+  animation-delay: .8s;
+}
+
+.skill-card:nth-child(9) {
+  animation-delay: .9s;
+}
+
+.skill-card:nth-child(10) {
+  animation-delay: 1s;
+}
+
+.skill-card:nth-child(11) {
+  animation-delay: 1.1s;
+}
+
+.skill-card:nth-child(12) {
+  animation-delay: 1.2s;
+}
+
+
+/* Card Hover */
+.skill-card {
+  transition:
+    transform .45s cubic-bezier(.2,.8,.2,1),
+    box-shadow .45s ease,
+    border-color .45s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-12px) scale(1.02);
+
+  box-shadow:
+    0 25px 55px rgba(101,16,26,.14);
+}
+
+/* Top Border */
+.skill-card::before {
+  height: 4px;
+  transition: transform .5s ease;
+}
+
+/* Background Circle */
+.skill-card::after {
+  transition: transform .6s ease, opacity .5s ease;
+}
+
+.skill-card:hover::after {
+  opacity: 1;
+  transform: scale(1.7);
+}
+
+
+/* =================================
+   SKILL ICONS
+================================= */
+
+.skill-icon {
+  position: relative;
+  z-index: 2;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+
+  background: #f8f5f2;
+  color: #65101a;
+
+  transition:
+    transform .4s ease,
+    border-radius .4s ease,
+    box-shadow .4s ease;
+}
+
+.skill-card:hover .skill-icon {
+  transform: translateY(-5px) rotate(-7deg) scale(1.08);
+  border-radius: 13px;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,.1);
+}
+
+/* SQL */
+.skill-icon.sql {
+  background: #e9eff8;
+  color: #3178a8;
+}
+
+/* C# */
+.skill-icon.csharp {
+  background: #eee5f7;
+  color: #68217a;
+}
+
+/* Angular Featured Icon */
+.featured .skill-icon {
+  background: rgba(255,255,255,.15);
+  color: white;
+}
+
+
+/* =================================
+   TAG ANIMATIONS
+================================= */
+
+.tags span {
+  transition:
+    background .35s ease,
+    color .35s ease,
+    transform .35s ease;
+}
+
+.skill-card:hover .tags span {
+  transform: translateY(-3px);
+}
+
+
+/* =================================
+   HEADER ANIMATION
+================================= */
+
+@keyframes skillsHeaderReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =================================
+   CARD REVEAL
+================================= */
+
+@keyframes skillReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(45px) scale(.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+/* =================================
+   RESPONSIVE ANIMATIONS
+================================= */
+
+@media (max-width: 768px) {
+
+  .skill-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .skills-header {
+    gap: 20px;
+  }
+
+  .skill-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .skills-header,
+  .skill-card {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+
+  .skill-card,
+  .skill-icon,
+  .tags span {
+    transition: none !important;
+  }
+
 }

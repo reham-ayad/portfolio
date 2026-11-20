@@ -6,4 +6,15 @@ import { Component } from '@angular/core';
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
-export class Navbar {}
+export class Navbar {
+
+
+
+
+menuOpen = false;
+
+closeMenu(): void {
+  this.menuOpen = false;
+}
+
+}
